@@ -1,0 +1,60 @@
+{
+  "private": true,
+  "name": "popmotion-packages",
+  "author": "Matt Perry",
+  "homepage": "https://popmotion.io",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "publish": "lerna publish",
+    "playground": "start-storybook -p 6006",
+    "build-playground": "build-storybook"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.2.13",
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.0.20",
+    "babel-eslint": "^5.0.4",
+    "babel-loader": "^6.0.1",
+    "babel-plugin-root-import": "^5.1.0",
+    "babel-plugin-transform-export-extensions": "^6.4.0",
+    "babel-plugin-transform-react-constant-elements": "^6.9.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.2.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-subset-loose": "^1.0.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.17.0",
+    "babel-register": "^6.3.13",
+    "eslint": "^3.19.0",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jasmine": "2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "estraverse-fb": "^1.3.1",
+    "jest": "^21.1.0",
+    "react": "^16.3.0-alpha.2",
+    "react-dom": "^16.3.0-alpha.2",
+    "string-replace-loader": "^1.3.0",
+    "styled-components": "^3.2.1",
+    "webpack": "^3.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts)$": "../node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/_tests/.*\\.(ts|js)$",
+    "rootDir": "src",
+    "prettier": {
+      "singleQuote": true
+    }
+  }
+}

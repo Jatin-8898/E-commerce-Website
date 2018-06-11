@@ -1,0 +1,69 @@
+{
+  "name": "popmotion",
+  "version": "8.1.22",
+  "description": "A functional, reactive motion library.",
+  "author": "Matt Perry",
+  "homepage": "https://popmotion.io",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Popmotion/popmotion"
+  },
+  "bugs": {
+    "url": "https://github.com/Popmotion/popmotion/issues"
+  },
+  "keywords": [
+    "animation",
+    "ux",
+    "ui",
+    "popmotion",
+    "canvas animation",
+    "dom animation",
+    "dom",
+    "pointer tracking",
+    "mouse",
+    "mouse tracking",
+    "touch",
+    "touch tracking",
+    "physics",
+    "interaction",
+    "interface",
+    "svg"
+  ],
+  "analyze": true,
+  "license": "MIT",
+  "scripts": {
+    "build":
+      "npm run test && tsc && tsc --outDir lib && NODE_ENV=production webpack && npm run measure",
+    "prepublish": "npm run build",
+    "postpublish": "npm run clean",
+    "watch": "NODE_ENV=development webpack --progress --colors --watch",
+    "measure": "gzip -c dist/popmotion.global.min.js | wc -c",
+    "test": "jest",
+    "publish-beta": "npm publish --tag beta",
+    "clean": "git clean -fd -e node_modules/ -e lib/ src/ -x ."
+  },
+  "dependencies": {
+    "framesync": "^3.1.7",
+    "style-value-types": "^1.0.4",
+    "stylefire": "^1.2.9"
+  },
+  "devDependencies": {
+    "jest": "^21.1.0",
+    "ts-jest": "^21.2.4",
+    "ts-list": "^1.0.5",
+    "ts-loader": "^3.5.0",
+    "tslint-circular-dependencies": "^0.1.0",
+    "typescript": "^2.7.2",
+    "webpack": "^3.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": ["ts", "js"],
+    "transform": {
+      "\\.(ts)$": "../node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/_tests/.*\\.(ts|js)$",
+    "rootDir": "src"
+  },
+  "unpkg": "./dist/popmotion.global.js"
+}

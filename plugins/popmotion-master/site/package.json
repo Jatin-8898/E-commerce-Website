@@ -1,0 +1,72 @@
+{
+  "name": "popmotion-website",
+  "description": "The JavaScript motion engine. Create animations and interactions with tweens, physics and input tracking.",
+  "author": "Matt Perry <sirhound@popmotion.io>",
+  "homepage": "http://popmotion.io",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Popmotion/popmotion"
+  },
+  "bugs": {
+    "url": "https://github.com/Popmotion/popmotion/issues"
+  },
+  "keywords": [
+    "animation",
+    "ux",
+    "ui",
+    "popmotion",
+    "canvas animation",
+    "jquery animation",
+    "dom animation",
+    "dom",
+    "pointer tracking",
+    "mouse",
+    "mouse tracking",
+    "touch",
+    "touch tracking",
+    "physics",
+    "interaction",
+    "interface",
+    "svg"
+  ],
+  "scripts": {
+    "build-content": "node scripts/generate-content.js",
+    "build-site": "npm run build-content && next build && next export -o public",
+    "watch-site": "npm run build-content && next",
+    "start-site": "next start",
+    "lint-site": "eslint",
+    "s3-upload": "aws s3 cp public s3://popmotion.io --recursive",
+    "invalidate-cloudfront": "aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id E31YV8NBB5M5N4 --paths /*",
+    "publish-site": "npm run build-site && npm run s3-upload && npm run invalidate-cloudfront"
+  },
+  "analyze": true,
+  "license": "MIT",
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "front-matter": "^2.1.1",
+    "live-on-stage": "^2.0.17",
+    "nprogress": "^0.2.0",
+    "popmotion": "^8.1.7",
+    "popmotion-react": "^2.1.0",
+    "prismjs": "^1.6.0",
+    "react": "^16.3.0-rc.0",
+    "react-dom": "^16.3.0-rc.0",
+    "react-live": "^1.7.0",
+    "react-syntax-highlighter": "^5.8.0",
+    "styled-components": "^2.2.3",
+    "three": "^0.88.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.1.4",
+    "marksy": "^5.0.0",
+    "next": "^4.2.1",
+    "popmotion-pose": "^1.0.24",
+    "react-pose": "^1.0.1",
+    "s3": "^4.4.0"
+  },
+  "version": "7.0.0",
+  "prettier": {
+    "singleQuote": true
+  }
+}

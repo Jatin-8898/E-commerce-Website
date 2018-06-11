@@ -1,0 +1,52 @@
+{
+  "name": "react-pose",
+  "version": "1.0.1",
+  "description": "A declarative animation library for React",
+  "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "bundle": "NODE_ENV=production webpack",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "measure": "gzip -c dist/react-pose.js | wc -c",
+    "prettier": "prettier ./src/*",
+    "prepublishOnly": "npm run prettier && npm run build && npm run bundle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/popmotion"
+  },
+  "keywords": [
+    "animation",
+    "dom",
+    "declarative",
+    "popmotion",
+    "react",
+    "react animation"
+  ],
+  "author": "Matt Perry",
+  "license": "MIT",
+  "presets": [
+    "env"
+  ],
+  "peerDependencies": {
+    "react": "^16.3.0-rc.0",
+    "react-dom": "^16.3.0-rc.0"
+  },
+  "devDependencies": {
+    "react": "^16.3.0-rc.0",
+    "react-dom": "^16.3.0-rc.0",
+    "typescript": "^2.7.2",
+    "prettier": "1.11.1",
+    "webpack": "^3.11.0"
+  },
+  "dependencies": {
+    "popmotion-pose": "^1.0.24"
+  },
+  "unpkg": "./dist/react-pose.js",
+  "prettier": {
+    "parser": "typescript",
+    "singleQuote": true
+  }
+}
